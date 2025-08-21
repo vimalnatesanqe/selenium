@@ -38,14 +38,23 @@ import time
 
 #use contional commands
 
-for checkbox in checkbox_all:
-    checkbox.click()
-for check in checkbox_all:
-    print(check.is_displayed)
-    print(check.is_enabled)
-    print(check.is_selected)
-    print(check.get_attribute(id))
-    time.sleep(10)
-    check.click()
+# for checkbox in checkbox_all:
+#     checkbox.click()
+# for check in checkbox_all:
+#     print(check.is_displayed)
+#     print(check.is_enabled)
+#     print(check.is_selected)
+#     print(check.get_attribute(id))
+#     time.sleep(10)
+#     check.click()
+
+#select even check box
+
+for sel_box in range(len(checkbox_all)):
+    if sel_box%2==0:
+        checkbox_all[sel_box].click()
+        id=checkbox_all[sel_box].get_attribute('id')
+        print(f"even id is {id}")
+        
 
     
