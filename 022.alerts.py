@@ -12,21 +12,13 @@ driver=webdriver.Chrome(service=ser_obj)
 driver.get("https://testautomationpractice.blogspot.com/")
 driver.maximize_window()
 
-drop_down=driver.find_element(By.XPATH,"//select[@id='country']")
-drop_down_lis=Select(drop_down)
+driver.find_element(By.XPATH,"//button[@id='promptBtn']").click()
 
+alrt=driver.switch_to.alert
+print(alrt.text)
 import time
+time.sleep(5)
+alrt.send_keys("VIMALATHITHAN")
 time.sleep(10)
-drop_down_lis.select_by_visible_text("India")
-#drop_down_lis.select_by_value('india')
-#drop_down_lis.deselect_by_index()
-
-optin_lis=drop_down_lis.options
-
-for i in optin_lis:
-    print(i.text)
-    if i.text=="Australia":
-        i.click()
-        
-
-
+alrt.accept()
+alrt.dismiss()
