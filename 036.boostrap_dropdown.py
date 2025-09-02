@@ -13,3 +13,6 @@ for ctry in country:
     if ctry.text=='India':
         ctry.click()
 
+import os
+
+driver.save_screenshot(os.getcwd()+"//tckt.png")
